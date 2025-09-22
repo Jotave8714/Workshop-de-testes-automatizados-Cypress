@@ -23,3 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('login', (usuario) => {
+    cy.visit('https://uol.hmg.unifor.br/acesso/app/autenticacao/');
+    cy.get('app-login > .form-section > .login-inner-form > :nth-child(1) > .form-control')
+        .should('be.visible')
+        .type(usuario);
+    cy.get('.label-float.clearfix > .form-control')
+        .should('be.visible')                
+        .type(12345678);
+    cy.contains('button', 'Acessar')
+        .should('be.visible')
+        .click();
+    cy.url().should('contain', 'inicio');
+})
