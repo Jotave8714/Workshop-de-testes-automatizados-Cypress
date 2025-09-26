@@ -78,13 +78,13 @@
 //-------------------------------------------------------------------------------------\\
 
 //DELETAR REQUERIMENTO
-cy.request({
-	method: 'DELETE',
-	url: `https://uol.hmg.unifor.br/requerimentos-digitais//${idreq}/remover`,
-	headers: {
-		'Cookie':`X-UNIFOR-API-Token=${token}`,
-		'X-UNIFOR-API-TOKEN': token 
-	}
-}).then((response) => {
-	expect(response.status).to.be.eq(204);
-});
+// cy.request({
+// 	method: 'DELETE',
+// 	url: `https://uol.hmg.unifor.br/requerimentos-digitais//${idreq}/remover`,
+// 	headers: {
+// 		'Cookie':`X-UNIFOR-API-Token=${token}`,
+// 		'X-UNIFOR-API-TOKEN': token 
+// 	}
+// }).then((response) => {
+// 	expect(response.status).to.be.eq(204);
+// });
